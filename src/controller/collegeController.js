@@ -15,7 +15,7 @@ const createCollegeData = async function (req, res) {
         if (Object.keys(collegeData).length === 0) {
             return res.status(400).send({ status: false, message: "data should be present in body" })
         }
-        let { name, fullName, logoLink } = collegeData
+        let { name, fullName, logoLink } = collegeData        
         if (!name) return res.status(400).send({ status: false, message: "please enter name" })
         if (!isValidation(name)) return res.status(400).send({ status: false, msg: "please enter valid name"})
      
@@ -40,7 +40,7 @@ const createCollegeData = async function (req, res) {
         }
         let createCollegeData = await collegeModel.create(collegeData)
         let newData ={ name: createCollegeData.name, fullName: createCollegeData.fullName, logoLink: createCollegeData.logoLink, isDeleted: createCollegeData.isDeleted}
-        return res.send({ status: true, msg: "college data  created successfully", data: newData })
+        return res.status(201).send({ status: true, msg: "college data  created successfully", data: newData })
     }
     catch (error) {
         return res.status(500).send({ status: false, message: error.message })

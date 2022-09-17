@@ -12,10 +12,9 @@ const internSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        reuired: true,
+        required: true,
         unique: true,
         trim: true
-
     },
     mobile: {
         type: Number,
@@ -27,7 +26,7 @@ const internSchema = new mongoose.Schema({
         required: true,
         ref: "college"
     },
-    isDeleated: {
+    isDeleted: {
         type: Boolean,
         default: false
     }

@@ -10,15 +10,13 @@ const collegeSchema = new mongoose.Schema({
     },
     fullName: {
         type: String,
-        required: true,
-
+        required: true
     },
     logoLink: {
         type: String,
         required: true
-
     },
-    isDeleated: {
+    isDeleted: {
         type: Boolean,
         default: false
     }
@@ -27,4 +25,4 @@ const collegeSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model("college", collegeSchema)
+module.exports = mongoose.model("college", collegeSchema) 

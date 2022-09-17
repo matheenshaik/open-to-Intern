@@ -8,15 +8,4 @@ router.post("/functionup/interns", internController.intern)
 router.get("/functionup/collegeDetails", internController.getCollegeDetails)
 
 
-module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
+module.exports = router
